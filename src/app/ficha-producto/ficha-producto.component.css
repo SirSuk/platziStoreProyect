@@ -1,0 +1,25 @@
+.caja{
+  width: 500px
+
+}
+.carrosel, .info{
+  height:auto;
+  display: flex;
+  margin:auto;
+  justify-content: center;
+
+}
+
+.carr{
+  padding: 3rem;
+}
+
+.info {
+  margin-top:2rem;
+  width: 500px;
+}
+
+.info h2{
+  text-align: center;
+  padding: 1rem;
+}

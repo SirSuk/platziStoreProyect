@@ -1,0 +1,35 @@
+.caja{
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  padding:1rem;
+  gap:1rem;
+
+  justify-content: center;;
+
+}
+
+.tarjeta{
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.numProd{
+  font-weight: bold;
+}
+
+.textoProdRestantes{
+  padding: 2rem;
+}
+
+.cajaTextoProdRestantes{
+  display:flex;
+  justify-content: center;
+}
+
+
+.precio {
+  font-weight: 600;
+  font-size: 1.2rem;
+}

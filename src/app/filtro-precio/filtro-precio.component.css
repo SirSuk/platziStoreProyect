@@ -1,0 +1,10 @@
+.filtro{
+  background-color: #10dd7d;
+  display:flex;
+  padding:1rem;
+  justify-content: center;
+  align-items: center;;
+  width: 100%;
+  margin-top: 3rem;
+  border-radius: 10px
+}

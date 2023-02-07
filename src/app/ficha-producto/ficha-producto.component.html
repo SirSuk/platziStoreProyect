@@ -1,0 +1,40 @@
+<div class="caja container" *ngIf="producto">
+
+  <div class="card info" style="width: 18rem;">
+    <h2>{{producto.title}}</h2>
+    <div class="card-header">
+      {{producto.description}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{producto.price | currency : 'EUR' }} </li>
+      <li class="list-group-item">{{producto.category.name}}</li>
+      <li class="list-group-item">{{producto.updatedAt | date: 'yyyy'}}</li>
+
+    </ul>
+    <button class="btn btn-link mt-2"  [routerLink]="['/productos/categoria',producto.category['id'] ]">volver</button>
+  </div>
+
+  <div *ngIf="producto" id="carouselExampleControls" class="carrosel carousel slide" data-bs-ride="carousel">
+    <div class="carr carousel-inner p-2">
+      {{producto.title}}
+      <div class="carruselitem carousel-item active">
+        <img [src]="producto.images[0]" class="d-block w-100" alt="...">
+      </div>
+      <div class="carruselitem carousel-item">
+        <img [src]="producto.images[1]" class="d-block w-100" alt="...">
+      </div>
+      <div class="carruselitem carousel-item">
+        <img [src]="producto.images[2]" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</div>

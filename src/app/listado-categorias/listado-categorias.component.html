@@ -1,0 +1,13 @@
+<div class="acheDos">
+  <h2>CATEGORIAS DISPONIBLES</h2>
+</div>
+<div class="caja container" *ngIf="categorias">
+  
+  <figure class="figure mx-2" *ngFor="let cat of categorias" 
+         [routerLink]="['/productos/categoria/', cat.id]">
+
+    <img [src]="cat.image" class="figure-img img-fluid rounded" 
+         [alt]="'imagen de la categoria' +cat.name">
+    <figcaption class="name figure-caption">{{cat.name}}</figcaption>
+  </figure>
+</div>
