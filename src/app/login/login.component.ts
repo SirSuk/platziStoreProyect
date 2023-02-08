@@ -16,7 +16,7 @@ export class LoginComponent {
   constructor(private authservice: LoginServiceService,
               private router: Router){}
 
-  
+
   ngOnInit():void {
     this.form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -37,9 +37,15 @@ export class LoginComponent {
     ).subscribe(response => {
       localStorage.setItem('token', response.access_token)
       this.authservice.profile().subscribe(data => {
+<<<<<<< HEAD
         localStorage.setItem('user', JSON.stringify(data))
         this.router.navigate(['/dashboard'])
+=======
+      localStorage.setItem('user', JSON.stringify(data))
+
+>>>>>>> f1f1ccb8205161897acdfb24e6ffb80f832e5d05
     })
   })
+  
 }
 }

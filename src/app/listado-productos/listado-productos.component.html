@@ -7,31 +7,29 @@
 
 
 
-<div class="cajaTextoProdRestantes">
+<div class="cajaTextoProdRestantes mt-4 mx-4">
 
-  <p class="textoProdRestantes" *ngIf="listadoProductos">Esta categoria tiene<span class="numProd"> {{listadoProductos.length}} </span>productos</p>
-  <span><button [routerLink]="['./home']"  class="btn btn-success mt-4 mx-2">Volver a Categorias</button></span>
+  <p class="mt-1 fs-5" *ngIf="listadoProductos">Esta categoria tiene<span class="numProd">
+    {{listadoProductos.length}} </span>productos</p>
+  <span><button [routerLink]="['./home']" class="mx-4 btn btn-danger mb-1">Volver a Categorias</button></span>
 </div>
 </div>
 <div *ngIf="listadoProductos" class="container caja">
 
-  <div class="card tarjeta"  
-       *ngFor="let producto of listadoProductos" 
+  <div class="card tarjeta"
+       *ngFor="let producto of listadoProductos"
        [routerLink]="['/producto' , producto.title.split(' ').join('-')]"
        [queryParams]="{idproducto: producto.id}">
-       
 
-    <img [src]="producto.images[0]" class="card-img-top" alt="...">
-
+    <img [src]="producto.images[0]" class="imagen card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{producto.title}}</h5>
       {{producto.creationAt | date: "MMM yyy" }}
     </div>
-
     <ul class="list-group list-group-flush">
       <li class="precio list-group-item">{{producto.price | currency : 'EUR'}}</li>
   </ul>
- 
+
 </div>
 
 </div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,9 +20,10 @@ import { FormularioUsuarioComponent } from './formulario-usuario/formulario-usua
 import { UsuarioNuevoComponent } from './usuario-nuevo/usuario-nuevo.component';
 import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.component';
 import { UsuarioEliminarComponent } from './usuario-eliminar/usuario-eliminar.component';
+import { registerLocaleData } from '@angular/common';
 
 
-
+registerLocaleData(localeEs, 'es')
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { UsuarioEliminarComponent } from './usuario-eliminar/usuario-eliminar.co
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ ],
+  providers: [ {provide: LOCALE_ID, useValue: 'es' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
