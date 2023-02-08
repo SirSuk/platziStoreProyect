@@ -1,0 +1,9 @@
+<h2>Eliminar usuario</h2>
+<p>¿estas seguro?</p>
+
+<div>
+  <button class="btn btn-dark mx-2 btn-lg"  (click)="eliminarUsuario()">Si</button>
+  <button class="btn btn-dark mx-2 btn-lg"  [routerLink]="['/gestion-usuarios']">Volver</button>
+</div>
+
+<div class="form-text text-success fs-5 mt-2" *ngIf="mensajeOk">Usuario eliminado correctamente</div>

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   form!:FormGroup
   mensajeError: string= ''
+  
   constructor(private authservice: LoginServiceService,
               private router: Router){}
 
@@ -36,8 +37,8 @@ export class LoginComponent {
     ).subscribe(response => {
       localStorage.setItem('token', response.access_token)
       this.authservice.profile().subscribe(data => {
-        this.router.navigate(['/dashboard']);
-        
+        localStorage.setItem('user', JSON.stringify(data))
+        this.router.navigate(['/dashboard'])
     })
   })
 }

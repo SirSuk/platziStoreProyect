@@ -1,0 +1,8 @@
+<h2>Editar Usuario</h2>
+<div *ngIf="usuario">
+  <app-formulario-usuario [datos]="usuario" [roleDisabled]="false" (enviarUsuario)="enviarUsuario($event)"></app-formulario-usuario>
+  <button class="btn btn-dark" [routerLink]="['/gestion-usuarios']">Volver </button>
+</div>
+
+<div class="form-text text-danger fs-5 mt-2" *ngIf="mensajeError !== '' ">{{mensajeError}}</div>
+<div class="form-text text-success fs-5 mt-2" *ngIf="mensajeOk">Usuario modificado correctamente</div>

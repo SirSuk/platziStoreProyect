@@ -1,6 +1,7 @@
 <nav class="relative navbar navbar-dark bg-success">
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['home']">Gestion de Productos</a>
+    <span *ngIf="usuario">{{usuario.name}}</span>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,9 +12,38 @@
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['login']">Login</a>
+
+
+         
+
+          <li class="nav-item" *ngIf="usuario">
+            <a class="nav-link active" [routerLink]="['area-personal']">Mis datos</a>
           </li>
+
+          <div *ngIf="usuario?.role ==='admin'">
+            <li class="nav-item">
+              <a class="nav-link active" [routerLink]="['gestion-productos']">Gestion de Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" [routerLink]="['gestion-categorias']">Gestion de Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" [routerLink]="['gestion-usuarios']">Gestion de Usuarios</a>
+            </li>
+
+          </div>
+          <li class="nav-item" *ngIf="!usuario; else bloqueCerrarSesion">
+            <a class="nav-link active" [routerLink]="['login']">Login</a>
+          </li>
+        
+          <ng-template #bloqueCerrarSesion>
+            <li class="nav-item">
+              <a class="nav-link active" (click)="cerrarSesion()">Cerrar Sesion</a>
+            </li>
+          </ng-template>
+
+
+        
         </ul>
   </div>
   </div>

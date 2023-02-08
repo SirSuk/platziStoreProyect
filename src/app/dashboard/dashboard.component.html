@@ -1,8 +1,10 @@
 <div class="container text-center p-5 bg-info mt-5">
 
   <h1 class="pb-3">Bienvenido a tu dashboard <span>👋</span></h1>
-<p > Aqui podras añadir nuevos usuarios, borralos, o editar los ya existentes</p>
+<p *ngIf="usuario.role === 'admin'; else bloqueSinPermisos"> Aqui podras añadir nuevos usuarios y productos, borralos, o editar los ya existentes</p>
 
-
+<ng-template #bloqueSinPermisos>
+  <p>Aqui podrás consultar y modificar tus datos personales</p>  
+</ng-template>
 
 </div>

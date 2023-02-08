@@ -1,0 +1,29 @@
+<h2 class="text-center">Listado de usuarios</h2>
+<div class="add-user ">
+  <button [routerLink]="['/gestion-usuarios/nuevo']"  class="btn btn-dark my-3">Añadir user</button>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let usuario of usuarios">
+      <th scope="row">{{usuario.id}}</th>
+      <td>{{usuario.name}}</td>
+      <td>{{usuario.email}}</td>
+      <td>{{usuario.role}}</td>
+      <td>
+        <button class="btn btn-warning" [routerLink]="['/gestion-usuarios/editar']" [queryParams]="{usuario: usuario.id}">editar</button> 
+        <button class="btn btn-warning" [routerLink]="['/gestion-usuarios/eliminar']" [queryParams]="{usuario: usuario.id}" >eliminar</button>
+      </td>
+    </tr>
+    
+  
+  </tbody>
+</table>

@@ -1,0 +1,7 @@
+<h2>Crear usuario</h2>
+<app-formulario-usuario [roleDisabled]="false" [textoBoton]="'Crear'"  (enviarUsuario)="enviarUsuario($event)"></app-formulario-usuario>
+<div class="my-2">
+  <button class="btn btn-dark" [routerLink]="['/gestion-usuarios']">Volver </button>
+</div>
+<div class="form-text text-danger fs-5 mt-2" *ngIf="mensajeError !== '' ">{{mensajeError}}</div>
+<div class="form-text text-success fs-5 mt-2" *ngIf="mensajeOk">Usuario creado correctamente}</div>
