@@ -1,7 +1,7 @@
-<form class="container mt-4 bg-info p-4 rounded border border-2" novalidate 
-     [formGroup]="form" 
+<form class="container mt-4 bg-info p-4 rounded border border-2" novalidate
+     [formGroup]="form"
     (ngSubmit)="onSubmit()">
- 
+
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
     <input type="email" class="form-control" id="email" name="email" formControlName="email">
@@ -10,22 +10,20 @@
        Email obligatorio </div>
     <div class="form-text text-danger" *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
       Formato Incorrecto </div>
-
   </div>
 
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password" formControlName="password">
-
-    <div class="form-text text-danger" *ngIf="form.get('password')?.hasError('required') && form.get('email')?.touched">
-       Password obligatoria </div>
+    <input type="password" class="form-control" id="exampleInputPassword1"
+           name="password" formControlName="password">
+    <div class="form-text text-danger"
+         *ngIf="form.get('password')?.hasError('required') && form.get('email')?.touched">
+               Password obligatoria </div>
   </div>
-
   <!-- <a [routerLink]="['/registro']"> ¿No tienes cuenta? Registrate aqui </a> -->
-
   <button [disabled]="form.invalid" type="submit" class="btn btn-danger mt-2">Login</button>
   <button [routerLink]="['/home']" type="button" class="btn btn-danger mt-2">Volver</button>
-  
+
   <div class="form-text text-danger fs-5 mt-2" *ngIf="mensajeError !== '' ">Datos Incorrectos </div>
 
 </form>

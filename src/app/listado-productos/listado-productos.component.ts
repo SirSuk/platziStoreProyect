@@ -18,10 +18,11 @@ export class ListadoProductosComponent {
 
   ngOnInit() {
     this.ActivatedRoute.params.subscribe(param => {
+
         this.categoria= parseInt(param['idCategoria'])
         this.suscribeProducts(this.categoria)
       })
-    
+
   }
 
 
@@ -36,13 +37,14 @@ export class ListadoProductosComponent {
     private suscribeProducts(categoria:number) {
       this.service.getProductsByCategories(categoria).subscribe(data => {
         this.listadoProductos = data
+        console.log(this.listadoProductos)
     })
   }
 
     private subscribeProductsByFilter($event: Filtro, categoria:number) {
       this.service.getProductsByFilter(categoria, $event).subscribe(data => {
         this.listadoProductos = data
-    })  
+    })
  }
 
 }

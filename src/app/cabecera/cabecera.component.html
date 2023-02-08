@@ -1,6 +1,8 @@
 <nav class="relative navbar navbar-dark bg-success">
   <div class="container-fluid">
     <a class="navbar-brand" [routerLink]="['home']">Gestion de Productos</a>
+   <p *ngIf="role !== ''">You are logged in</p>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>

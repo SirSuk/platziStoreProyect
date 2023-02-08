@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 // import { Login } from '../inerfaces/login';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Usuario } from '../inerfaces/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class LoginServiceService {
   }
 
   profile() {
-    return this.http.get<any>(this.urlBase + 'auth/profile', this.cabeceraAuthorization())
-   
+    return this.http.get<Usuario>(this.urlBase + 'auth/profile', this.cabeceraAuthorization())
+
   }
 
   cabeceraAuthorization() {

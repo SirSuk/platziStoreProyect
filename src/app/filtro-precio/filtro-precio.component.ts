@@ -8,10 +8,8 @@ import { Filtro } from '../inerfaces/producto';
   styleUrls: ['./filtro-precio.component.css']
 })
 export class FiltroPrecioComponent {
-
   @Output() onFilter: EventEmitter<Filtro>
   form! : FormGroup;
-
 
 constructor() {
   this.onFilter = new EventEmitter()
@@ -22,9 +20,7 @@ ngOnInit():void {
     preMin: new FormControl('', [Validators.required, Validators.min(0)]),
     preMax: new FormControl('', [Validators.required, Validators.min(0)])
 })
-
 }
-
 onSubmit() {
   console.log(this.form.value)
   this.onFilter.emit(this.form.value)
