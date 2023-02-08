@@ -14,7 +14,7 @@ export class CabeceraComponent {
 
   }
 
-  ngOnInit(): void {
+  ngDoCheck(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     const user = localStorage.getItem('user')

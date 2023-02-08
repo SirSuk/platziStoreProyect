@@ -36,10 +36,10 @@ export class LoginComponent {
     ).subscribe(response => {
       localStorage.setItem('token', response.access_token)
       this.authservice.profile().subscribe(data => {
-        localStorage.setItem('user', JSON.stringify(data))
+      localStorage.setItem('user', JSON.stringify(data))
 
     })
   })
-  this.router.navigate(['/dashboard'])
+  
 }
 }
