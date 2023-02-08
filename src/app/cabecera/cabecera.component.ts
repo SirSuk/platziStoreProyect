@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent {
+  role!:string 
   usuario! : Usuario | null
   constructor(private router: Router){}
 

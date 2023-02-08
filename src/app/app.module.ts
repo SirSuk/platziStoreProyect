@@ -20,10 +20,10 @@ import { FormularioUsuarioComponent } from './formulario-usuario/formulario-usua
 import { UsuarioNuevoComponent } from './usuario-nuevo/usuario-nuevo.component';
 import { UsuarioEditarComponent } from './usuario-editar/usuario-editar.component';
 import { UsuarioEliminarComponent } from './usuario-eliminar/usuario-eliminar.component';
-import { registerLocaleData } from '@angular/common';
 
 
-registerLocaleData(localeEs, 'es')
+
+
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ registerLocaleData(localeEs, 'es')
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ {provide: LOCALE_ID, useValue: 'es' } ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
